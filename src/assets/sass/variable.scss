@@ -1,0 +1,50 @@
+// Import a Google Font
+// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+@mixin absolute($top,$bottom,$left,$right, $position:absolute) {
+  position: $position;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
+@mixin flex($justify:center,$align:center,$wrap:wrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+@mixin linkColor($Color) {
+color: $Color;
+&:visited {
+  color: $Color;
+}
+&:hover {
+  color: $Color;
+}
+}
+// Set your brand colors
+$main:#fff;
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$border-color: #7d7c7a;
+
+// Update Bulma's global variables
+$family-sans:  'Noto sans JP', sans;
+$family-serif:'Noto Serif JP', serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: #000;
+
+// Update some of Bulma's component variables
+$control-border-width: 2px;
+$input-background-color: $beige-lighter;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Import the rest of Bulma
+@import "~bulma";

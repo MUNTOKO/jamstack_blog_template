@@ -1,0 +1,183 @@
+
+
+@mixin absolute($top,$bottom,$left,$right, $position:absolute) {
+  position: $position;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
+@mixin flex($justify:center,$align:center,$wrap:wrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+@mixin linkColor($Color) {
+color: $Color;
+&:visited {
+  color: $Color;
+}
+&:hover {
+  color: $Color;
+}
+}
+html {
+  font-size: 16px;
+}
+#contents{
+  padding-top: 58px;
+}
+.wrap{
+  width: 1000px;
+  margin: auto;
+}
+.wrap_inner{
+  width: 80%;
+  margin: auto;
+}
+.row{
+  @include flex();
+}
+h1,h2{
+  font-size: 3rem;
+  text-align: center;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+body{
+  font-family:$family-serif;
+  color: #000;
+}
+.title{
+    position: relative;
+    padding: 0.5em;
+    background: transparent;
+    color: #000;
+    font-family: $family-serif;
+    font-size: 1.5rem;
+    ::before {
+      position: absolute;
+      content: '';
+      top: 100%;
+      left: 0;
+      border: none;
+      border-bottom: solid 15px transparent;
+      // border-right: solid 20px $grey;
+    }
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 0;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    // color: $text;
+    // font-size: $size-small;
+    // background: $info;
+    &:before{
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -15px;
+      border: 15px solid transparent;
+      // border-top: 15px solid $info;
+    }
+  }
+
+  .position_center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform : translate(-50%,-50%);
+  }
+
+.card{
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+article{
+  h1{
+
+    padding: .25em 0 .25em .75em;
+    border-left: 6px solid #ccc;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html{
+    font-size: 11px;
+  }
+  .wrap{
+    width: 88%;
+  }
+}
+
+
+
+// ******* default dark *******
+$white-bg: #fff;
+$white-hl: #fff;
+$white-fg: #000;
+.luxbar-menu-white,
+.luxbar-menu-white .dropdown ul {
+    background-color: $white-bg;
+    color: $white-fg;
+}
+
+.luxbar-menu-white {
+    .active,
+    .luxbar-item:hover {
+        background-color: $white-hl;
+    }
+
+    .luxbar-hamburger {
+        span,
+        span::before,
+        span::after {
+            background-color: $white-fg;
+        }
+    }
+}
+
+$luxbar-height: 100px;
+@import "~luxbar/scss/luxbar.scss";
+.luxbar-brand {
+  font-size: 1.6em;
+  padding: 18px 24px 18px 24px;
+  width: 150px;
+}
+.luxbar-checkbox:not(:checked) ~ .luxbar-menu {
+  height: 80px;
+}
+.luxbar-header{
+  height: 80px;
+}
+
+
+
+.list_title {
+  font-family: $family-sans;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.archive_list {
+  margin-top: 1.5rem;
+  line-height: 1.7rem;
+  font-size: 0.875rem;
+}
+
