@@ -38,9 +38,9 @@ export interface State {
   relatedPosts: Dictionary<Post>
 }
 
-export interface RootState extends State {
-  //
-}
+// export interface RootState extends State {
+//   //
+// }
 
 export const mutations: MutationTree<State> = {
   acceptCookie(state) {

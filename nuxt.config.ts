@@ -162,7 +162,12 @@ const nuxtConfig = {
     /*
      ** You can extend webpack config here
      */
-    vendor: ['truncator'],
+    babel: {
+      plugins: [
+        '@babel/plugin-proposal-nullish-coalescing-operator',
+        '@babel/plugin-proposal-optional-chaining'
+      ]
+    },
     transpile: ['vue-clamp', 'resize-detector'],
     extend(config: any, ctx: any) {
       // Run ESLint on save
