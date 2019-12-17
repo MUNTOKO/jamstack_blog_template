@@ -16,24 +16,22 @@ const nuxtConfig = {
    */
   head: {
     title: 'トップ',
-    titleTemplate: '%s-TOSHITAKAGOTO.com | 後藤稔貴',
+    titleTemplate: '%s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content:
-          '後藤稔貴の活動を集約させた「TOSHITKA GOTO.com」「お菓子を通じて笑顔に」をテーマにお菓子が持つエンターテインメント性を一人でも多くの人に届けたいです。'
+        content: ''
       },
-      { property: 'og:site_name', content: 'TOSHITAKAGOTO.com | 後藤稔貴' },
-      { property: 'og:url', content: 'https://toshitakagoto.com/' },
+      { property: 'og:site_name', content: '' },
+      { property: 'og:url', content: '' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:title', content: 'TOSHITAKAGOTO.com | 後藤稔貴' },
+      { property: 'og:title', content: '' },
       {
         property: 'og:description',
-        content:
-          '後藤稔貴の活動を集約させた「TOSHITKA GOTO.com」「お菓子を通じて笑顔に」をテーマにお菓子が持つエンターテインメント性を一人でも多くの人に届けたいです。'
+        content: ''
       },
       // { property: 'og:image', content: 'hoge' },
       { property: 'twitter:card', content: 'summary' }
@@ -42,13 +40,7 @@ const nuxtConfig = {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: 'kuroneko1th.png'
-      }
-    ],
-    script: [
-      {
-        async: true,
-        src: '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+        href: ''
       }
     ]
   },
