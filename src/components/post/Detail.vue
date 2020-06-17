@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
+import { Component, Vue, Prop } from 'nuxt-property-decorator';
 
 @Component({
   // eslint-disable-next-line require-await
@@ -14,7 +14,7 @@ import { Component, Vue, Prop } from 'nuxt-property-decorator'
   // }
 })
 export default class Detail extends Vue {
-  @Prop() post?: object
+  @Prop() post?: object;
 }
 </script>
 

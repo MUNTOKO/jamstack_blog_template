@@ -13,19 +13,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import dayjs from 'dayjs'
+import { Component, Vue } from 'nuxt-property-decorator';
+import dayjs from 'dayjs';
 
 @Component({})
 export default class Sidebar extends Vue {
   get postsDate() {
-    return this.$store.state.product.postsDate
+    return this.$store.state.product.postsDate;
   }
+
   get postsCategory() {
-    return this.$store.state.product.categories
+    return this.$store.state.product.categories;
   }
+
   getDate(date: Date) {
-    return dayjs(date).format('YYYY.MM')
+    return dayjs(date).format('YYYY.MM');
   }
 }
 </script>

@@ -8,18 +8,18 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Vue, Component } from 'nuxt-property-decorator';
 // import TopList from '~/components/post/TopList.vue'
-import PostsList from '~/components/post/PostsList.vue'
-import Sidebar from '~/components/layouts/Sidebar.vue'
-const MainTemplate = () => import('~/components/layouts/MainTemplate.vue')
+import PostsList from '~/components/post/PostsList.vue';
+import Sidebar from '~/components/layouts/Sidebar.vue';
+const MainTemplate = () => import('~/components/layouts/MainTemplate.vue');
 
 @Component({
   async asyncData({ store }) {
     await store.dispatch('product/initPosts', {
       slug: '',
-      date: ''
-    })
+      date: '',
+    });
     // await store.dispatch('product/initPostsDate')
     // await store.dispatch('product/initPostCategory')
   },
@@ -27,8 +27,8 @@ const MainTemplate = () => import('~/components/layouts/MainTemplate.vue')
     MainTemplate,
     // TopList,
     PostsList,
-    Sidebar
-  }
+    Sidebar,
+  },
 })
 export default class Index extends Vue {}
 </script>

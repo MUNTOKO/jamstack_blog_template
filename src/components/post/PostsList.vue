@@ -23,70 +23,70 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import dayjs from 'dayjs'
-import VClamp from 'vue-clamp'
-const Pagination = () => import('~/components/layouts/Pagination.vue')
+import { Component, Vue } from 'nuxt-property-decorator';
+import dayjs from 'dayjs';
+import VClamp from 'vue-clamp';
+const Pagination = () => import('~/components/layouts/Pagination.vue');
 
 @Component({
-  components: { Pagination, VClamp }
+  components: { Pagination, VClamp },
 })
 export default class DateList extends Vue {
   async applyPage(value: number) {
-    await this.$store.commit('product/setPage', value)
+    await this.$store.commit('product/setPage', value);
     await this.$store.dispatch('product/initPosts', {
       slug: '',
       date:
-        this.$nuxt.$route.params.date === void 0
+        typeof this.$nuxt.$route.params.date === 'undefined'
           ? ''
           : this.$nuxt.$route.params.date,
       category:
-        this.$nuxt.$route.params.category === void 0
+        typeof this.$nuxt.$route.params.category === 'undefined'
           ? ''
-          : this.$nuxt.$route.params.category
-    })
+          : this.$nuxt.$route.params.category,
+    });
   }
 
   get posts() {
-    return this.$store.state.product.posts
+    return this.$store.state.product.posts;
   }
 
   get page() {
-    return this.$store.state.product.page
+    return this.$store.state.product.page;
   }
 
   get pagesTotal() {
-    return this.$store.state.product.pagesTotal
+    return this.$store.state.product.pagesTotal;
   }
 
   getCategory(category: string) {
     switch (category) {
       case 'Front':
-        return 'フロントエンド'
+        return 'フロントエンド';
       case 'Server':
-        return 'サーバーサイド'
+        return 'サーバーサイド';
       default:
-        return '未分類'
+        return '未分類';
     }
   }
 
   getDate(date: Date) {
-    return dayjs(date).format('YYYY.MM.DD')
+    return dayjs(date).format('YYYY.MM.DD');
   }
 
   infiniteHandler($state: any) {
     setTimeout(() => {
       if (this.count < this.posts.length) {
-        this.count += 9
-        $state.loaded()
+        this.count += 9;
+        $state.loaded();
       } else {
-        $state.complete()
+        $state.complete();
       }
-    }, 1000)
+    }, 1000);
   }
 
-  count: number = 9
-  currentPage: number = 1
+  count: number = 9;
+  currentPage: number = 1;
 }
 </script>
 

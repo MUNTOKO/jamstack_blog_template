@@ -16,21 +16,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import dayjs from 'dayjs'
-import VClamp from 'vue-clamp'
-const Pagination = () => import('~/components/layouts/Pagination.vue')
+import { Component, Vue } from 'nuxt-property-decorator';
+import dayjs from 'dayjs';
+import VClamp from 'vue-clamp';
+const Pagination = () => import('~/components/layouts/Pagination.vue');
 
 @Component({
-  components: { Pagination, VClamp }
+  components: { Pagination, VClamp },
 })
 export default class RelatedPostsList extends Vue {
   get relatedPosts() {
-    return this.$store.state.product.relatedPosts
+    return this.$store.state.product.relatedPosts;
   }
 
   getDate(date: Date) {
-    return dayjs(date).format('YYYY.MM.DD')
+    return dayjs(date).format('YYYY.MM.DD');
   }
 }
 </script>

@@ -5,22 +5,22 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Vue, Component } from 'nuxt-property-decorator';
 // import TopList from '~/components/post/TopList.vue'
-const HeaderBlock = () => import('~/components/layouts/Header.vue')
+const HeaderBlock = () => import('~/components/layouts/Header.vue');
 
 @Component({
   async asyncData({ store }) {
     await store.dispatch('product/initPosts', {
       slug: '',
-      date: ''
-    })
+      date: '',
+    });
     // await store.dispatch('product/initPostsDate')
     // await store.dispatch('product/initPostCategory')
   },
   components: {
-    HeaderBlock
-  }
+    HeaderBlock,
+  },
 })
 export default class Index extends Vue {}
 </script>
@@ -38,9 +38,6 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
-}
-body {
-  background: url(~static/bg.png);
 }
 .button--green {
   display: inline-block;

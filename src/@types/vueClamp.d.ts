@@ -1,1 +1,1 @@
-declare module 'vue-clamp'
+declare module 'vue-clamp';

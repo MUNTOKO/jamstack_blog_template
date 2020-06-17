@@ -6,16 +6,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
-const FooterText = () => import('~/components/layouts/FooterText.vue')
+import { Component, Vue, Prop } from 'nuxt-property-decorator';
+const FooterText = () => import('~/components/layouts/FooterText.vue');
 
 @Component({
   components: {
-    FooterText
-  }
+    FooterText,
+  },
 })
 export default class MainTemplate extends Vue {
-  @Prop() isForm?: boolean
+  @Prop() isForm?: boolean;
 }
 </script>
 

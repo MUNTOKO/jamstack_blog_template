@@ -2,26 +2,19 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
-  },
-  parserOptions: {
-    parser: '@typescript-eslint/parser'
+    node: true,
   },
   extends: [
-    '@nuxtjs',
+    '@nuxtjs/eslint-config-typescript',
+    'plugin:nuxt/recommended',
+    'plugin:prettier/recommended',
     'prettier',
     'prettier/vue',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended'
   ],
-  plugins: [
-    'prettier',
-    '@typescript-eslint'
-  ],
-  // add your custom rules here
+  plugins: ['vue'],
   rules: {
-    "prettier/prettier": "error",
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "error"
-  }
-}
+    'vue/html-closing-bracket-newline': 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+  },
+};

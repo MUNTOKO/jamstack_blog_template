@@ -29,14 +29,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import dayjs from 'dayjs'
-import Sidebar from '~/components/layouts/Sidebar.vue'
-const MainTemplate = () => import('~/components/layouts/MainTemplate.vue')
-const Detail = () => import('~/components/post/Detail.vue')
-const SocialMenu = () => import('~/components/layouts/SocialMenu.vue')
-const LatestList = () => import('~/components/post/LatestList.vue')
-const RelatedPostsList = () => import('~/components/post/RelatedPostsList.vue')
+import { Component, Vue } from 'nuxt-property-decorator';
+import dayjs from 'dayjs';
+import Sidebar from '~/components/layouts/Sidebar.vue';
+const MainTemplate = () => import('~/components/layouts/MainTemplate.vue');
+const Detail = () => import('~/components/post/Detail.vue');
+const SocialMenu = () => import('~/components/layouts/SocialMenu.vue');
+const LatestList = () => import('~/components/post/LatestList.vue');
+const RelatedPostsList = () => import('~/components/post/RelatedPostsList.vue');
 
 // const New = () => import('~/components/contact/New.vue')
 // const GoogleAdsense = () => import('~/components/layouts/GoogleAdsense.vue')
@@ -44,13 +44,13 @@ const RelatedPostsList = () => import('~/components/post/RelatedPostsList.vue')
 @Component({
   async asyncData({ store, params }) {
     await store.dispatch('product/initPosts', {
-      slug: params.slug
-    })
+      slug: params.slug,
+    });
     // this.currentPost.fields.category[0].fields.slug
 
     await store.dispatch('product/getRelatedPostData', {
-      category: store.state.product.currentPost.fields.category[0].fields.slug
-    })
+      category: store.state.product.currentPost.fields.category[0].fields.slug,
+    });
   },
   components: {
     MainTemplate,
@@ -58,7 +58,7 @@ const RelatedPostsList = () => import('~/components/post/RelatedPostsList.vue')
     SocialMenu,
     LatestList,
     Sidebar,
-    RelatedPostsList
+    RelatedPostsList,
   },
   head(this: Slug) {
     return {
@@ -67,46 +67,49 @@ const RelatedPostsList = () => import('~/components/post/RelatedPostsList.vue')
         {
           hid: 'og:title',
           property: 'og:title',
-          content: this.currentPost.fields.title || ''
+          content: this.currentPost.fields.title || '',
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.currentPost.fields.description || ''
+          content: this.currentPost.fields.description || '',
         },
         {
           hid: 'og:image',
           property: 'og:image',
           content:
-            `https:${this.currentPost.fields.headerImage.fields.file.url}` || ''
+            `https:${this.currentPost.fields.headerImage.fields.file.url}` ||
+            '',
         },
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.currentPost.fields.title || ''
+          content: this.currentPost.fields.title || '',
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: this.currentPost.fields.description || ''
+          content: this.currentPost.fields.description || '',
         },
         {
           hid: 'og:image',
           name: 'og:image',
           content:
-            `https:${this.currentPost.fields.headerImage.fields.file.url}` || ''
-        }
-      ]
-    }
-  }
+            `https:${this.currentPost.fields.headerImage.fields.file.url}` ||
+            '',
+        },
+      ],
+    };
+  },
 })
 export default class Slug extends Vue {
-  isVertical: boolean = true
+  isVertical: boolean = true;
   get currentPost() {
-    return this.$store.state.product.currentPost
+    return this.$store.state.product.currentPost;
   }
+
   getDate(date: Date) {
-    return dayjs(date).format('YYYY.MM.DD')
+    return dayjs(date).format('YYYY.MM.DD');
   }
 }
 </script>

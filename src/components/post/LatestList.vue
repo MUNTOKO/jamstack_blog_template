@@ -17,15 +17,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue } from 'nuxt-property-decorator';
 
 @Component({})
 export default class LatestList extends Vue {
-  isCenter: boolean = true
-  isBold: boolean = true
+  isCenter: boolean = true;
+  isBold: boolean = true;
 
   get latestPosts() {
-    return this.$store.state.product.latestPosts
+    return this.$store.state.product.latestPosts;
   }
 }
 </script>

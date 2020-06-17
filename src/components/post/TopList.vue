@@ -27,62 +27,62 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import dayjs from 'dayjs'
-const Pagination = () => import('~/components/layouts/Pagination.vue')
+import { Component, Vue } from 'nuxt-property-decorator';
+import dayjs from 'dayjs';
+const Pagination = () => import('~/components/layouts/Pagination.vue');
 
 @Component({
-  components: { Pagination }
+  components: { Pagination },
 })
 export default class Top extends Vue {
   async applyPage(value: number) {
-    await this.$store.commit('product/setPage', value)
+    await this.$store.commit('product/setPage', value);
     await this.$store.dispatch('product/initPosts', {
       slug: '',
-      date: ''
-    })
+      date: '',
+    });
   }
 
   get posts() {
-    return this.$store.state.product.posts
+    return this.$store.state.product.posts;
   }
 
   get page() {
-    return this.$store.state.product.page
+    return this.$store.state.product.page;
   }
 
   get pagesTotal() {
-    return this.$store.state.product.pagesTotal
+    return this.$store.state.product.pagesTotal;
   }
 
   getCategory(category: string) {
     switch (category) {
       case 'Front':
-        return 'フロントエンド'
+        return 'フロントエンド';
       case 'Server':
-        return 'サーバーサイド'
+        return 'サーバーサイド';
       default:
-        return '未分類'
+        return '未分類';
     }
   }
 
   getDate(date: Date) {
-    return dayjs(date).format('MM月 DD日')
+    return dayjs(date).format('MM月 DD日');
   }
 
   infiniteHandler($state: any) {
     setTimeout(() => {
       if (this.count < this.posts.length) {
-        this.count += 9
-        $state.loaded()
+        this.count += 9;
+        $state.loaded();
       } else {
-        $state.complete()
+        $state.complete();
       }
-    }, 1000)
+    }, 1000);
   }
 
-  count: number = 9
-  currentPage: number = 1
+  count: number = 9;
+  currentPage: number = 1;
 }
 </script>
 

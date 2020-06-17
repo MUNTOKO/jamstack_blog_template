@@ -10,28 +10,29 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
+import { Component, Vue, Prop } from 'nuxt-property-decorator';
 
 @Component({})
 export default class Pagination extends Vue {
-  @Prop() page!: number
-  @Prop() max!: number
+  @Prop() page!: number;
+  @Prop() max!: number;
 
-  disabled: boolean = true
+  disabled: boolean = true;
 
   prev(newVal: number) {
     if (this.page !== 1) {
-      this.$emit('page-data', newVal - 1)
+      this.$emit('page-data', newVal - 1);
     }
   }
 
   next(newVal: number) {
     if (this.page !== this.max) {
-      this.$emit('page-data', newVal + 1)
+      this.$emit('page-data', newVal + 1);
     }
   }
+
   goPage(newVal: number) {
-    this.$emit('page-data', newVal)
+    this.$emit('page-data', newVal);
   }
 }
 </script>

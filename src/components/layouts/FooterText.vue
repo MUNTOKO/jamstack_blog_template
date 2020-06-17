@@ -16,18 +16,20 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import dayjs from 'dayjs'
+import Vue from 'vue';
+import dayjs from 'dayjs';
 
 export default class Footer extends Vue {
   get postsDate() {
-    return this.$store.state.product.postsDate
+    return this.$store.state.product.postsDate;
   }
+
   get postsCategory() {
-    return this.$store.state.product.categories
+    return this.$store.state.product.categories;
   }
+
   getDate(date: Date) {
-    return dayjs(date).format('YYYY.MM')
+    return dayjs(date).format('YYYY.MM');
   }
 }
 </script>
