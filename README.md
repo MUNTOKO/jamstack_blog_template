@@ -1,5 +1,5 @@
 # Nuxt Contentful TypeScript template
-- nuxt 2.10.1
+- nuxt v2.12.2
 - TypeScript
 - Contentful
 
